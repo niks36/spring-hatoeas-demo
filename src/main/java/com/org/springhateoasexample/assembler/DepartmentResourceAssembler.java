@@ -32,13 +32,4 @@ public class DepartmentResourceAssembler extends RepresentationModelAssemblerSup
     return departmentResource;
   }
 
-  @Override
-  public CollectionModel<DepartmentResource> toCollectionModel(Iterable<? extends Department> entities)
-  {
-    CollectionModel<DepartmentResource> actorModels = super.toCollectionModel(entities);
-
-    actorModels.add(linkTo(methodOn(DepartmentController.class).getAllDepartments()).withSelfRel());
-
-    return actorModels;
-  }
 }
